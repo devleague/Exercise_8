@@ -16,8 +16,22 @@ var counter = {
 }
 
 function countLetters(counter, sample_text){
-  // FIX ME
-}
+  
+  //base case
+  if (sample_text.length === 0) {
+    return '';
+  };
+  
+  // convert text to all lower case
+  let text = sample_text.toLowerCase();
+  let letter = text.slice(0, 1);
+
+  if ([letter]) {
+    counter[letter]++;
+  }
+
+  countLetters(counter, text.slice(1));
+};
 
 $(document).ready(function(){
   countLetters(counter, sample_text);
